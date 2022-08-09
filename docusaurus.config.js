@@ -58,7 +58,8 @@ const config = {
           },
           {
             href: 'https://github.com/garzj/docs-diary',
-            label: 'GitHub',
+            className: 'header-github-link',
+            title: 'GitHub repository',
             position: 'right',
           },
         ],
