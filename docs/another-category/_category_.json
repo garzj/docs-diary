@@ -1,6 +1,5 @@
 {
-  "label": "Tutorial - Extras",
-  "position": 3,
+  "label": "Another category",
   "link": {
     "type": "generated-index"
   }
