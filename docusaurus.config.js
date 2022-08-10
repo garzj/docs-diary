@@ -27,7 +27,7 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/garzj/docs-diary/tree/master/',
+          editUrl: 'https://github.com/garzj/docs-diary/edit/master/',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
         },
