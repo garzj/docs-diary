@@ -60,6 +60,12 @@ const config = {
         },
         items: [
           {
+            href: 'https://garz.dev',
+            className: 'header-website-link',
+            title: 'Main site',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/garzj/docs-diary',
             className: 'header-github-link',
             title: 'GitHub repository',

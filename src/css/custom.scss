@@ -38,3 +38,19 @@
       no-repeat;
   }
 }
+
+.header-website-link {
+  &:hover {
+    opacity: 0.8;
+  }
+  &::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    display: flex;
+    background: url('/img/pool-8-ball.png') no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
