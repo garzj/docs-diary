@@ -61,6 +61,7 @@ const config = {
         items: [
           {
             href: 'https://garz.dev',
+            target: '_self',
             className: 'header-website-link',
             title: 'Main site',
             position: 'right',
