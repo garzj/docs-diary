@@ -82,6 +82,14 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      algolia: {
+        appId: 'ZOV7YG0IO7',
+        apiKey: 'cbcf8f5cf3277f7b618328dfddcd1a5c',
+        indexName: 'garz',
+        contextualSearch: true,
+        searchParameters: {},
+        searchPagePath: 'search',
+      },
     }),
 };
 
