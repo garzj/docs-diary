@@ -12,10 +12,18 @@ This will request a certificate and install it onto all nginx sites that use the
 certbot --nginx -d example.com,www.example.com
 ```
 
-## Expand certificate
+## List certificates
 
-```bash
-certbot --nginx -d example.com,www.example.com,newsubdomain.example.com
+```
+certbot certificates
 ```
 
-If certbot asks you, press `e` to expand the certificate.
+## Modify certificate domains
+
+Run the same command with `--cert-name` to make sure cerbot won't request a new certificate.
+
+```bash
+certbot --nginx --cert-name $name -d example.com,www.example.com,newsubdomain.example.com
+```
+
+If certbot asks you, press `e` to expand or `u` to update the certificate.
