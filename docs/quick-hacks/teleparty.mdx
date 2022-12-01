@@ -4,9 +4,9 @@ import TabItem from '@theme/TabItem';
 # Teleparty
 
 :::note
-Before Teleparty began to obfuscate their extension code, it was a bit easier.
+Before Teleparty began to obfuscate their extension code, this was a bit more reliable.
 
-The following code works for version `3.9.1_0`, but could easily break on future releases.
+The following code works for version `3.9.7_0`, but could easily break on future releases.
 :::
 
 ## View the files
@@ -43,7 +43,9 @@ Teleparty's extension has the id `oocalimimngaihdkbihfgmpkcpnmlaoa`.
 
 <!-- prettier-ignore -->
 ```js
-var chatApi = teleparty.pageControls.os;
+var chatApi = Object.values(teleparty.pageControls).find(
+  (v) => typeof v === 'object' && 'addIconSelector' in v
+);
 
 func = chatApi.addIconSelector.toString();
 var iconMap = {
@@ -52,8 +54,8 @@ var iconMap = {
   Halloween: [ 'bats.svg', 'candy_corn.svg', 'cat_black.svg', 'cat_white.svg', 'coffin.svg', 'eye_ball.svg', 'face_angry.svg', 'face_evil.svg', 'face_silly.svg', 'face_smile.svg', 'frankenstein.svg', 'ghost_F.svg', 'ghost_M.svg', 'gravestone.svg', 'lollipop.svg', 'moon.svg', 'mummy.svg', 'potion.svg', 'pumpkin.svg', 'pumpkin_witch.svg', 'skull_brain.svg', 'skull_candy.svg', 'skull_girl.svg', 'witch_hat.svg', ],
   Thanksgiving: [ 'acorn.svg', 'bread.svg', 'candles.svg', 'corn.svg', 'drinks.svg', 'maple_leaf.svg', 'plate_chicken.svg', 'pumpkin.svg', 'pumpkin_pie.svg', 'slice_pie.svg', 'sun_flower.svg', 'turkey_face.svg', ],
 };
-func = func.replaceAll('mt', 'iconMap');
-func = func.replaceAll('Et[t]()', "t !== 'General'");
+func = func.replaceAll(func.match(/Object\.keys\((\w+)\)/)[1], 'iconMap');
+func = func.replace(/\w+\[t\]\(\)/, "t !== 'General'");
 chatApi.addIconSelector = new Function(
   func.replace(/^[^{]*\{/, '').slice(0, -1)
 );
