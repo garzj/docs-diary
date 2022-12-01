@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Teleparty
 
 :::note
@@ -8,8 +11,25 @@ The following code works for version `3.9.1_0`, but could easily break on future
 
 ## View the files
 
-Per default, Chrome on Windows places extension files into the following folder:  
+Here are some default locations, your browser could store extension files:
+
+<Tabs>
+  <TabItem value='win-google-chrome' label='Windows: Google Chrome'>
+
 `%localappdata%\Google\Chrome\User Data\Default\Extensions`
+
+  </TabItem>
+  <TabItem value='linux-google-chrome' label='Linux: Google Chrome'>
+
+`~/.config/google-chrome/Default/Extensions`
+
+  </TabItem>
+  <TabItem value='linux-brave-browser' label='Linux: Brave Browser'>
+
+`~/.config/BraveSoftware/Brave-Browser/Default/Extensions`
+
+  </TabItem>
+</Tabs>
 
 Teleparty's extension has the id `oocalimimngaihdkbihfgmpkcpnmlaoa`.
 
