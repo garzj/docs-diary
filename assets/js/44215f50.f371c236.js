@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_garz_dev=self.webpackChunkdocs_garz_dev||[]).push([[816],{4653:e=>{e.exports=JSON.parse('{"title":"Arch","slug":"/category/arch","permalink":"/category/arch","navigation":{"previous":{"title":"Linux","permalink":"/category/linux"},"next":{"title":"MySQL","permalink":"/os/linux/arch/mysql"}}}')}}]);

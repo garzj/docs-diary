@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_garz_dev=self.webpackChunkdocs_garz_dev||[]).push([[425],{8734:e=>{e.exports=JSON.parse('{"title":"Minecraft","slug":"/category/minecraft","permalink":"/category/minecraft","navigation":{"previous":{"title":"\ud83d\udd79 Games","permalink":"/category/-games"},"next":{"title":"Trolls","permalink":"/games/minecraft/trolls"}}}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_garz_dev=self.webpackChunkdocs_garz_dev||[]).push([[54],{4847:e=>{e.exports=JSON.parse('{"title":"\ud83d\udee0 Refs","slug":"/category/-refs","permalink":"/category/-refs","navigation":{"previous":{"title":"Teleparty","permalink":"/quick-hacks/teleparty"},"next":{"title":"Miscellanious","permalink":"/refs/misc"}}}')}}]);

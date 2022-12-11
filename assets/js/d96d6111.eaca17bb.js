@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_garz_dev=self.webpackChunkdocs_garz_dev||[]).push([[605],{7458:e=>{e.exports=JSON.parse('{"title":"\u2699 OS","slug":"/category/-os","permalink":"/category/-os","navigation":{"previous":{"title":"Volume","permalink":"/games/minecraft/volume"},"next":{"title":"Linux","permalink":"/category/linux"}}}')}}]);
