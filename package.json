@@ -49,6 +49,9 @@
   },
   "overrides": {
     "trim": "0.0.3",
-    "got": "11.8.5"
+    "got": "11.8.5",
+    "docusaurus-plugin-sass": {
+      "@docusaurus/core": "^0.0.0-5506"
+    }
   }
 }
