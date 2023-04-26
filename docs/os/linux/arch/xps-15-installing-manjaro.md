@@ -160,4 +160,17 @@ Now after running `systemctl restart gdm`, the issues were fixed.
   - `rustup default stable`
   - `rustup target add i686-unknown-linux-gnu`
   - `cargo install cargo-watch`
+- VirtManager setup
+  - To use VirtManager without root, set `unix_sock_group = "libvirt"` in `/etc/libvirt/libvirtd.conf` and run:
+    ```bash
+    newgrp libvirt
+    sudo usermod -a -G libvirt $USER
+    ```
+  - Enable and start the daemon and the default network:
+    ```bash
+    sudo systemctl enable libvirtd
+    sudo systemctl start libvirtd
+    sudo virsh net-autostart default
+    sudo virsh net-start default
+    ```
 - ...
