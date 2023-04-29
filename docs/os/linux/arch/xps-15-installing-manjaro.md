@@ -173,4 +173,10 @@ Now after running `systemctl restart gdm`, the issues were fixed.
     sudo virsh net-autostart default
     sudo virsh net-start default
     ```
+- League of Legends
+  - Install lutris with `pamac install lutris`
+  - Configure Lutris -> Wine Settings -> System Options
+    - Set the Default installation folder to `~/.local/share/games`
+    - Enable NVIDIA Prime Render Offload
+  - Install from `https://lutris.net/games/league-of-legends/`
 - ...
