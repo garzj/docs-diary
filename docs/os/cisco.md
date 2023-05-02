@@ -99,4 +99,15 @@ ipv6 route ::/64 fe80::1
 ip route 0.0.0.0 0.0.0.0 gi0/0/0
 ```
 
+## Spanning tree
+
+```cisco-ios
+! Set spanning tree mode
+spanning-tree mode pvst
+
+! Use portfast on an interface
+interface fa0/0
+  spanning-tree portfast
+```
+
 ...
