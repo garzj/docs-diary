@@ -1,0 +1,5 @@
+position: 400
+label: '🌎 Web'
+link:
+  type: generated-index
+  description: Some random tips and tricks evolving around networking and web dev
