@@ -21,6 +21,8 @@ wget https://garz.dev/bin/gpl/mysql-clients-8.0.31-1-x86_64.pkg.tar.zst https://
 sudo pacman -U libmysqlclient-8.0.31-1-x86_64.pkg.tar.zst mysql-clients-8.0.31-1-x86_64.pkg.tar.zst mysql-8.0.31-1-x86_64.pkg.tar.zst
 ```
 
+Now add those to `IgnorePkg` in `/etc/pacman.conf`: `mysql libmysqlclient mysql-clients`
+
 ### Additional tooling
 
 ```bash
