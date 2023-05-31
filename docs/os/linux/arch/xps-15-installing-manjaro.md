@@ -13,6 +13,7 @@ Here are my steps switching from Windows to Manjaro Linux on a Dell XPS 15 9500.
 - Once booted, update pacman mirrors  
   `sudo pacman-mirrors -c de,at`
 - Enable the AUR + Flatpak with updates in the Pamac GUI and upgrade all packages
+  - Add flathub: `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
 
 ## Rendering setup
 
@@ -21,7 +22,6 @@ Here are my steps switching from Windows to Manjaro Linux on a Dell XPS 15 9500.
 The default installation had issues waking up after being in suspend or hibernation state. The following actions solved the problem for me:
 
 - Changing some boot options
-  - Add `fsck` in `/etc/default/grub` to `GRUB_CMDLINE_LINUX_DEFAULT` before `resume=`
   - I also added `sysrq_always_enabled=1` here, to enable the [REISUB](https://forum.manjaro.org/t/howto-reboot-turn-off-your-frozen-computer-reisub-reisuo/3855) method, just in case
   - `sudo update-grub`
 - Enabling [early KMS start](https://wiki.archlinux.org/title/kernel_mode_setting#Early_KMS_start) of the Intel and Nvidia modules
@@ -42,14 +42,14 @@ Edit `/etc/gdm/custom.conf`, and uncomment `#WaylandEnable=false`, because Wayla
 
 ```bash
 sudo pacman -S mutter-x11-scaling
-settings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
+gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
 sudo systemctl restart gdm # note, that this will close all apps
 ```
 
 ### Setup optimus manager
 
 ```
-pamac install optimus-manager gdm-prime libgdm-prime
+pamac install base-devel optimus-manager gdm-prime
 sudo cp /usr/share/optimus-manager.conf /etc
 ```
 
@@ -68,7 +68,7 @@ startup_mode=hybrid
 dynamic_power_management=fine
 ```
 
-Now, after runnning `systemctl restart gdm optimus-manager`, the desktop will begin to use `gdm-prime` and start optimus-manager using hybrid graphics right away.
+Now, after runnning `systemctl start optimus-manager && systemctl restart gdm`, the desktop will begin to use `gdm-prime` and start optimus-manager using hybrid graphics right away.
 
 ### Pretty GDM and plymouth
 
@@ -146,9 +146,10 @@ Now after running `systemctl restart gdm`, the issues were fixed.
 
 ## Configuring additional apps
 
-- `pamac install brave-browser copyq neovim nvim-packer-git visual-studio-code-bin ttf-ms-win11-auto steam-native-runtime bitwarden speedtest-cli minecraft-launcher whatsapp-for-linux tree platformio neofetch mutter-x11-scaling cowsay x11-emoji-picker cuda-tools spotify teams-for-linux youtube-dl nm-connection-editor vmware-workstation wireshark-qt dotnet-sdk python-pip rustup lldb go libreoffice-fresh android-sdk android-studio autojump bluez-utils-compat cabextract gdlauncher-bin linux-wifi-hotspot nvidia-container-runtime-bin python2-bin sqlite teamviewer usb_modeswitch xxd-standalone`
+- `pamac install brave-browser copyq neovim nvim-packer-git visual-studio-code-bin ttf-ms-win11-auto steam-native-runtime bitwarden speedtest-cli minecraft-launcher whatsapp-for-linux tree platformio neofetch mutter-x11-scaling cowsay x11-emoji-picker cuda-tools teams-for-linux youtube-dl nm-connection-editor vmware-workstation wireshark-qt dotnet-sdk python-pip rustup lldb go libreoffice-still android-sdk android-studio autojump bluez-utils-compat cabextract gdlauncher-bin linux-wifi-hotspot nvidia-container-runtime-bin python2-bin sqlite teamviewer usb_modeswitch xxd-standalone tensorflow cuda cudnn xcursor-breeze noto-fonts downgrade virt-manager`
 
-- Set VS Code `terminal.integrated.fontFamily` to `NotoSansMono Nerd Font`
+- Set VS Code `terminal.integrated.fontFamily` to `MesloLGS NF` or `NotoSansMono Nerd Font`
+- Change cursor in Tweaks to `Xcursor-breeze`
 - Add myself to the wireshark group  
   `sudo usermod -a -G wireshark $USER`
 - Install a [resolve crack](https://www.reddit.com/user/GermanAcId/comments/yxssux/this_is_probably_what_youre_looking_for/) for mp4 codecs
@@ -174,9 +175,12 @@ Now after running `systemctl restart gdm`, the issues were fixed.
     sudo virsh net-start default
     ```
 - League of Legends
-  - Install lutris with `pamac install lutris`
+  - Install lutris with `pamac install lutris` (with `gamemode gamescope vkd3d wine winetricks xorg-xgamma` and their lib32 versions)
   - Configure Lutris -> Wine Settings -> System Options
     - Set the Default installation folder to `~/.local/share/games`
     - Enable NVIDIA Prime Render Offload
   - Install from `https://lutris.net/games/league-of-legends/`
+- `pamac install nvm`
+  - Follow setup instructions
+- Setup [mysql](./mysql.md) and [platformio](../../../tools/platform-io.mdx)
 - ...
