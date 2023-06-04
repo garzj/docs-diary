@@ -50,12 +50,12 @@ sudo systemctl restart gdm # note, that this will close all apps
 
 ```
 pamac install base-devel optimus-manager gdm-prime
-sudo cp /usr/share/optimus-manager.conf /etc
+sudo cp /usr/share/optimus-manager.conf /etc/optimus-manager
 ```
 
 Editing these configs will create a tear free experience:
 
-```conf title='/etc/optimus-manager.conf'
+```conf title='/etc/optimus-manager/optimus-manager.conf'
 driver=intel
 tearfree=yes
 options=overclocking, triple_buffer
@@ -63,7 +63,7 @@ options=overclocking, triple_buffer
 
 Also, applying the following settings will enable dynamic power management and hybrid graphics, but one should read [this guide](https://github.com/Askannz/optimus-manager/wiki/A-guide--to-power-management-options#configuration-1--dynamic-power-management-inside-the-nvidia-driver-runtime-d3-power-management) first:
 
-```conf title='/etc/optimus-manager.conf'
+```conf title='/etc/optimus-manager/optimus-manager.conf'
 startup_mode=hybrid
 dynamic_power_management=fine
 ```
