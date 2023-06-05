@@ -56,7 +56,7 @@ sudo cp /usr/share/optimus-manager.conf /etc/optimus-manager
 Editing these configs will create a tear free experience:
 
 ```conf title='/etc/optimus-manager/optimus-manager.conf'
-driver=intel
+driver=intel # modesetting is recommended for newer hardware, but then tearfree only works with xorg-server-git for now
 tearfree=yes
 options=overclocking, triple_buffer
 ```
@@ -68,7 +68,7 @@ startup_mode=hybrid
 dynamic_power_management=fine
 ```
 
-Now, after runnning `systemctl start optimus-manager && systemctl restart gdm`, the desktop will begin to use `gdm-prime` and start optimus-manager using hybrid graphics right away.
+Now, after runnning `systemctl restart gdm optimus-manager`, the desktop will begin to use `gdm-prime` and start optimus-manager using hybrid graphics right away. (`reboot` if this fails)
 
 ### Pretty GDM and plymouth
 
