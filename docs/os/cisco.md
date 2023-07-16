@@ -109,5 +109,3 @@ spanning-tree mode pvst
 interface fa0/0
   spanning-tree portfast
 ```
-
-...
