@@ -184,3 +184,4 @@ Now after running `systemctl restart gdm`, the issues were fixed.
   - Follow setup instructions
 - Setup [mysql](./mysql.md) and [platformio](../../../tools/platform-io.mdx)
 - ...
+- [Switch to Fedora and Wayland](../fedora/xps-17-fedora-setup.md)
