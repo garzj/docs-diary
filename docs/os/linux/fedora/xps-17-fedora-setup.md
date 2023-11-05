@@ -262,6 +262,14 @@ curl -fsSL https://raw.githubusercontent.com/platformio/platformio-core/develop/
 sudo dnf install dnfdragora
 # I had to fix https://github.com/manatools/dnfdragora/issues/152
 
+# Docker
+curl -fsSL https://get.docker.com -o install-docker.sh
+cat install-docker.sh # verify script
+sh install-docker.sh --dry-run # verify install commands
+sh install-docker.sh # installation
+sudo systemctl enable --now docker # start service
+sudo usermod -aG docker $USER # add user to docker group
+
 sudo dnf install steam
 ```
 
