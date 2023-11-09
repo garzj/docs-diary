@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_garz_dev=self.webpackChunkdocs_garz_dev||[]).push([[470],{3352:e=>{e.exports=JSON.parse('{"title":"Linux","slug":"/category/linux","permalink":"/category/linux","navigation":{"previous":{"title":"Cisco IOS","permalink":"/os/cisco"},"next":{"title":"Fedora","permalink":"/category/fedora"}}}')}}]);
