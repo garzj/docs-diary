@@ -236,6 +236,12 @@ Hibernation with `systemctl hibernate` should now work.
 
 I only had `Dummy Output` as my speaker, but [this answer](https://askubuntu.com/a/1387002/1037993) finally solved the issue for me.
 
+## Fix lag after bluetooth device idles
+
+If the mouse cursor lags after the device has been idling for a few seconds, this kernel parameter will fix the issue:
+
+Add `btusb.enable_autosuspend=0` to the `GRUB_CMDLINE_LINUX` in `/etc/default/grub`, run `sudo grub2-mkconfig` and reboot to apply the changes.
+
 ## Useful links
 
 - https://github.com/thiagoojack/packettracer-fedora
