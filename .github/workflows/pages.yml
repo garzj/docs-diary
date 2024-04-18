@@ -19,8 +19,8 @@ jobs:
           node-version: '18'
       - name: Build Docusaurus website
         run: |
-          npm install 
-          npm run build
+          yarn --frozen-lock-file
+          yarn build
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
