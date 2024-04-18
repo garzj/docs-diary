@@ -1,9 +1,8 @@
 // @ts-check
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
+import { themes } from "prism-react-renderer"
 
-const projectTitle = "Garz's Docs Diary";
+const projectTitle = "John's Random Docs";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -79,8 +78,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} ${projectTitle}. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: themes.github,
+        darkTheme: themes.vsDark,
       },
       algolia: {
         appId: 'ZOV7YG0IO7',
