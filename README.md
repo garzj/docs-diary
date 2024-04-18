@@ -4,22 +4,22 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 
 ## Installation
 
-```BASH
-npm i
+```bash
+yarn
 ```
 
 ## Development server
 
-```BASH
-npm start
+```bash
+yarn start
 ```
 
 ## Build the site
 
-```BASH
-npm run build
+```bash
+yarn build
 ```
 
 ## Deployment
 
-GitHub Actions is configured on this repository and will automatically deploy my changes.
+GitHub Actions is configured on this repository and will automatically deploy my changes (when pushed to `master`).
