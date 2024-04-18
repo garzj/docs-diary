@@ -1,38 +1,38 @@
 {
   "name": "docs-garz-dev",
-  "version": "0.0.0",
   "private": true,
   "scripts": {
-    "docusaurus": "npx docusaurus",
-    "start": "npx docusaurus start",
-    "build": "npx docusaurus build",
-    "swizzle": "npx docusaurus swizzle",
-    "deploy": "npx docusaurus deploy",
-    "clear": "npx docusaurus clear",
-    "serve": "npx docusaurus serve",
-    "write-translations": "npx docusaurus write-translations",
-    "write-heading-ids": "npx docusaurus write-heading-ids",
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
     "format": "npx prettier --write --ignore-path .gitignore .",
     "ncu": "ncu -u"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.2.1",
-    "@docusaurus/preset-classic": "^3.2.1",
-    "@mdx-js/react": "^3.0.1",
-    "clsx": "^2.1.0",
-    "docusaurus-plugin-sass": "^0.2.5",
-    "prism-react-renderer": "^2.3.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sass": "^1.75.0"
+    "@docusaurus/core": "3.2.1",
+    "@docusaurus/preset-classic": "3.2.1",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.2.1",
-    "@tsconfig/docusaurus": "^2.0.3",
+    "@docusaurus/tsconfig": "3.2.1",
+    "@docusaurus/types": "3.2.1",
+    "docusaurus-plugin-sass": "^0.2.5",
     "npm-check-updates": "^16.14.18",
     "prettier": "^3.2.5",
-    "typescript": "^5.4.5"
+    "sass": "^1.75.0",
+    "typescript": "~5.2.2"
   },
   "browserslist": {
     "production": [
@@ -41,19 +41,12 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
     ]
   },
   "engines": {
-    "node": ">=16.14"
-  },
-  "overrides": {
-    "trim": "0.0.3",
-    "got": "11.8.5",
-    "docusaurus-plugin-sass": {
-      "@docusaurus/core": "^3.2.1"
-    }
+    "node": ">=18.0"
   }
 }
