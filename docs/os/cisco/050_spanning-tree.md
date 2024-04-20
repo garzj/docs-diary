@@ -1,4 +1,4 @@
-# Spanning tree
+# Spanning tree (STP)
 
 todo: desc here
 
