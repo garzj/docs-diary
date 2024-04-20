@@ -35,3 +35,7 @@ ip route 0.0.0.0 0.0.0.0 gi0/0/0
 ### OSPF
 
 todo
+
+### EIGRP
+
+todo
