@@ -1,5 +1,5 @@
 # Dynamic host configuration
 
-todo: desc here (DHCP, SLAAC)
+Configuring dynamic host configuration (DHCP and SLAAC) on a Cisco device.
 
 todo

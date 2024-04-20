@@ -1,6 +1,6 @@
-# Spanning tree (STP)
+# Spanning tree
 
-todo: desc here
+Configuring the spanning tree protocol (STP) on Cisco devices.
 
 todo: complete
 
