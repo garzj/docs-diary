@@ -15,29 +15,46 @@ todo: complete
 - **Access ports**: Ports tagging incoming packets to belong to a VLAN. (allow a single VLAN)
 - **Trunking ports**: Ports that receive tagged packets. (allow multiple VLANs)
 
-## Switch
+## Configuration
+
+### Switches
+
+#### VLAN interfaces
 
 ```cisco-ios
-interface vlan 10
-  ...your interface config
+interface vlan 42
+  ! ... ip config
 ```
 
-### Trunking
+#### Access ports
 
-todo
-
-```cisco-ios title="config-if#"
-switchport mode access
-switchmod access vlan 50
+```cisco-ios
+interface fa0/1
+  switchport mode access
+  switchmod access vlan 42
 ```
 
-## Router (or multilayer switch)
+#### Trunking ports
+
+```cisco-ios
+interface fa0/1
+  switchport mode trunk
+  todo
+```
+
+### Routers
+
+#### No trunking
 
 ```cisco-ios
 interface gi0/0/0.10
   encapsulation dot1Q todo
   ...todo
 ```
+
+#### Trunking
+
+todo
 
 ## Voice VLANs
 
