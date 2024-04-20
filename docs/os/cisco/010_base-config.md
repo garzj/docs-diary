@@ -1,7 +1,3 @@
----
-sidebar_position: 10
----
-
 # Base configuration
 
 A base configuration setting up a Cisco device with some standard security practices.

@@ -1,7 +1,3 @@
----
-sidebar_position: 40
----
-
 # Gateways and routing
 
 Configuring gateways, static and dynamic routing and OSPF areas on a Cisco device.

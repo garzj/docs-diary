@@ -1,7 +1,3 @@
----
-sidebar_position: 020
----
-
 # IP addressing
 
 Configuring IP addressing on a Cisco device.

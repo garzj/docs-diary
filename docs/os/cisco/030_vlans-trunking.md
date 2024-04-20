@@ -1,7 +1,3 @@
----
-sidebar_position: 30
----
-
 # VLANs and trunking
 
 Configuring VLANs and trunking on a Cisco device.

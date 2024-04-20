@@ -1,7 +1,3 @@
----
-sidebar_position: 50
----
-
 # Spanning tree
 
 todo: desc here
