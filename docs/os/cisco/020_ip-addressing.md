@@ -33,3 +33,7 @@ interface gi0/0/0
 interface range gi0/0/0 - 1 , gi0/1/0
   ...
 ```
+
+## Dynamic addressing
+
+Instructions for dynamic addressing are covered in the [DHCP chapter](./dhcp).
