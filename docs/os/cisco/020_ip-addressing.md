@@ -2,9 +2,11 @@
 sidebar_position: 020
 ---
 
-# IP addressing and VLAN config
+# IP addressing
 
-Configuring IP addressing, VLANs and basic trunking on a Cisco device.
+Configuring IP addressing on a Cisco device.
+
+todo: complete
 
 ## Enabling IPv6
 
@@ -12,7 +14,7 @@ Configuring IP addressing, VLANs and basic trunking on a Cisco device.
 ipv6 enable
 ```
 
-## Router (or multilayer switch)
+## Router config (or multilayer switch)
 
 ```cisco-ios
 interface gi0/0/0
@@ -23,26 +25,13 @@ interface gi0/0/0
 ! Using a range
 interface range gi0/0/0 - 1 , gi0/1/0
   ...
-
-! Custom VLAN
-interface gi0/0/0.10
-  encapsulation dot1Q todo
-  ...
 ```
 
-## Switch
+## Switch config
 
 ```cisco-ios
 interface vlan 1
   ip address 192.168.0.253 255.255.255.0
   ipv6 address 2001:db8:1234:aabb::2/64
   no shutdown
-
-! Custom VLAN
-interface vlan 10
-  ...
 ```
-
-## Trunking
-
-todo
