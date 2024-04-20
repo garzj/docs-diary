@@ -12,6 +12,6 @@ Restricting access to VLANs is covered in the [VLANs and trunking chapter](./vla
 
 todo
 
-## ARP, DHCP poisoning, etc.
+## ARP, DHCP, STP defense, etc.
 
 todo
