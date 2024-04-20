@@ -36,4 +36,4 @@ interface range gi0/0/0 - 1 , gi0/1/0
 
 ## Dynamic addressing
 
-Instructions for dynamic addressing are covered in the [DHCP chapter](./dhcp).
+Instructions for dynamic addressing with DHCP and SLAAC are covered in the [dynamic configuration chapter](./dynamic-config).
