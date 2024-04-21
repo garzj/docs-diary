@@ -47,8 +47,9 @@ banner motd "Authorized access only!"
 ! Hostname
 hostname Device1
 
-! SSH key generation
+! SSH setup
 ip domain name exmaple.com
+ip ssh version 2
 crypto key generate rsa general-keys modulus 2048
 
 ! Block login 120s when 3 attempts fail in 60s
