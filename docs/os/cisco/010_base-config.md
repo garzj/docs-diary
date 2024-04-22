@@ -30,8 +30,6 @@ interface ?
 Make sure to change all specified passwords.
 :::
 
-todo: complete (descriptions?)
-
 This is how a standard base configuration for a Cisco device can look like:
 
 ```cisco-ios
