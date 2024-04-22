@@ -16,6 +16,12 @@ interface fa0/0
 spanning-tree portfast default
 ```
 
+### Evaluation
+
+```cisco-ios title="#"
+show spanning-tree summary
+```
+
 ### Security
 
 Instructions on how to make STP more secure using BPDU Guard is covered in the [port security chapter](./port_security#bpdu-guard-stp).
