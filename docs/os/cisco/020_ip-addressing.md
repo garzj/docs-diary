@@ -2,8 +2,6 @@
 
 Configuring basic IP addressing on a Cisco device.
 
-todo: complete
-
 ## Switches
 
 ```cisco-ios
