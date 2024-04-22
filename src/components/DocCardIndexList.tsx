@@ -5,5 +5,6 @@ import React from 'react';
 
 export default function DocCardIndexList() {
   const sidebar = useDocsSidebar();
-  return <DocCardList items={sidebar.items} />;
+  const items = sidebar.items.filter((item) => (item as any).href !== '/');
+  return <DocCardList items={items} />;
 }
