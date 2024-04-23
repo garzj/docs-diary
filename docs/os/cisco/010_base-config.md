@@ -56,17 +56,15 @@ login block-for 120 attempts 3 within 60
 ! Get amount of vty lines (usually 5 on switches, 16 on routers)
 line vty 0 4 ! or 15
   exec-timeout 15 0
-  login local
+  login local ! or use password ...
   transport input ssh ! or telnet
 
 line console 0
   exec-timeout 15 0
-  password cisco
   login local
 
 line aux 0
   exec-timeout 15 0
-  password cisco
   login local
 ```
 
