@@ -46,7 +46,7 @@ banner motd "Authorized access only!"
 hostname Device1
 
 ! SSH setup
-ip domain name exmaple.com
+ip domain-name example.com
 ip ssh version 2
 crypto key generate rsa general-keys modulus 2048
 
@@ -67,6 +67,8 @@ line aux 0
   exec-timeout 15 0
   login local
 ```
+
+More SSH settings in the [remote administration chapter](./administration#ssh).
 
 ## Viewing config
 
