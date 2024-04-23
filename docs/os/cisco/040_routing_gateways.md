@@ -17,6 +17,7 @@ Default gateways don't work on routers when IP routing is active. One would have
 
 ```cisco-ios
 ! Enable routing
+! By default, a router would only forward packets that are directly targeted at one of its interfaces
 ip routing
 ipv6 unicast-routing
 
