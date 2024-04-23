@@ -21,10 +21,11 @@ Configuring normal, numbered and extended access lists on a Cisco device.
 Note, that rules entered first take presedence over others.
 
 ```cisco-ios
-! numbered acl
-access-list 10 permit 192.168.10.0 0.0.0.255 ! (source, mask)
+! numbered acl (always matches source IPs)
+access-list 10 permit 192.168.10.0 0.0.0.255
 access-list 10 permit 192.168.20.0 0.0.0.255
-access-list 10 deny any ! is always implied at the end
+! (deny any is always implied at the end)
+access-list 10 deny any
 
 ! delete whole acl
 no access-list 10
@@ -33,11 +34,11 @@ no access-list 10
 ip access-list standard SOME_NAME
   ! ...
 
-! named extended acl
+! named extended acl (matches <soure> <destination> <protocol>)
 ip access-list extended MY_ACCESS_LIST
-  permit ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255 ! (source, mask), (destination, mask)
+  permit ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255
   permit ip 192.168.20.0 0.0.0.255 192.168.10.0 0.0.0.255
-  permit tcp 192.168.99.0 0.0.0.255 192.168.50.0 0.0.0.255 eq ssh ! filter by protocol
+  permit tcp 192.168.99.0 0.0.0.255 192.168.50.0 0.0.0.255 eq ssh
   deny any any
 ```
 
@@ -56,7 +57,7 @@ Suppose we have the following network (with routing already configured):
 
 <img src={NetworkImage} width="400" />
 
-And we apply this ACL to R2:
+And we apply this inbound ACL to R2:
 
 ```cisco-ios title="R2 conf#"
 ip access-list extended test-acl
@@ -64,7 +65,7 @@ ip access-list extended test-acl
   deny ip any any
 
 interface gi0/0/1
-  ip access-group test-acl in ! inbound
+  ip access-group test-acl in
 ```
 
 R1 will be able to ping R3, because of the `permit` rule.

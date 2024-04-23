@@ -25,7 +25,7 @@ switchport port-security mac-address sticky
 
 ! Delete inactive addresses
 switchport port-security aging time 10
-switchport port-security aging type inactivity ! or absolute
+switchport port-security aging type inactivity
 ```
 
 ### Security violations
@@ -55,7 +55,8 @@ interface gi0/1
 
 ! Limits DHCPDISCOVER packets on an interface
 interface fa0/1
-  dhcp snooping limit rate 5 ! per second
+  ! dhcp snooping limit rate <seconds>
+  dhcp snooping limit rate 5
 
 ! Limit to vlans
 dhcp snooping vlan 5,10,40-42

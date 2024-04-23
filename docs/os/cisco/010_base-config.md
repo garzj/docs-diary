@@ -53,11 +53,17 @@ crypto key generate rsa general-keys modulus 2048
 ! Block login 120s when 3 attempts fail in 60s
 login block-for 120 attempts 3 within 60
 
-! Get amount of vty lines (usually 5 on switches, 16 on routers)
-line vty 0 4 ! or 15
+! Get amount of vty lines (usually 5 or 16)
+show line
+
+! or line vty 0 15
+line vty 0 4
+  ! or transport input ssh telnet
+  transport input ssh
   exec-timeout 15 0
-  login local ! or use password ...
-  transport input ssh ! or telnet
+
+  ! or password <password>
+  login local
 
 line console 0
   exec-timeout 15 0

@@ -26,9 +26,11 @@ interface range fa0/1 - 2
   no shutdown
 
 interface port-channel 1
-  switchport mode trunk
-  switchport trunk allowed vlan 10,20 ! may not work on Cisco Packet Tracer together with port-channel
   no shutdown
+  switchport mode trunk
+
+  ! may not work on Cisco Packet Tracer together with port-channel
+  switchport trunk allowed vlan 10,20
 ```
 
 ### Evaluation

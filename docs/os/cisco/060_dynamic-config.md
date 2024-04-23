@@ -26,7 +26,8 @@ ip dhcp pool PRODUCTION
   default-router 192.168.0.1
   dns-server 192.168.11.5
   domain-name example.com
-  lease 7 ! days
+  ! lease <days>
+  lease 7
 ```
 
 ### Evaluation
@@ -84,7 +85,9 @@ ipv6 unicast-routing
 
 interface gi0/0
   no shutdown
-  ipv6 address 2001:db8:acad:1::1/64 ! enables SLAAC by default
+
+  ! enables SLAAC by default
+  ipv6 address 2001:db8:acad:1::1/64
 
   ! this should work too to enable SLAAC, but sometimes just doesn't on Cisco Packet Tracer
   ipv6 address autoconfig
@@ -112,8 +115,11 @@ interface gi0/0
   ! Configure dhcp pool to retrieve the info specified by flags
   ipv6 dhcp server LA_PISCINA
 
-  ipv6 nd other-config-flag ! set the O flag (stateless)
-  ipv6 nd managed-config-flag ! set the M flag (stateful)
+  ! set the O flag (stateless)
+  ipv6 nd other-config-flag
+
+  ! set the M flag (stateful)
+  ipv6 nd managed-config-flag
 ```
 
 #### Host configuration
@@ -128,7 +134,8 @@ interface gi0/0
 
   ! Stateful
   ipv6 address dhcp
-  ipv6 nd prefix default no-autoconfig ! Disable SLAAC or both are used
+  ! Disable SLAAC or both are used
+  ipv6 nd prefix default no-autoconfig
 ```
 
 ### Evaluation

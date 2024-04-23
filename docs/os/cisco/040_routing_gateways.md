@@ -75,7 +75,8 @@ interface loopback 1
   ip address 2.2.2.2 255.255.255.255
   no shutdown
 
-router ospf 10 ! =process-id
+! router ospf <process-id>
+router ospf 10
   router-id 1.1.1.1
 
   ! Disable OSPF packet propagation on an interface (i.e. to an ISP)

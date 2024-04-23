@@ -33,9 +33,14 @@ username admin password cisco
 ip ssh time-out 60
 ip ssh authentication-retries 2
 
-line vty 0 4 ! or 15
-  exec-timeout 15 0 ! mins, secs
-  login local ! use the globally defined username/password
+! or line vty 0 15
+line vty 0 4
+  ! exec-timeout <minutes> <seconds>
+  exec-timeout 15 0
+
+  ! uses the globally defined username/password
+  login local
+
   transport input ssh
 ```
 

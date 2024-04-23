@@ -6,7 +6,7 @@ Configuring the spanning tree protocol (STP) on Cisco devices.
 
 ```cisco-ios
 ! Set spanning tree mode
-spanning-tree mode pvst ! (default)
+spanning-tree mode pvst
 
 ! Use portfast on an interface
 interface fa0/0
