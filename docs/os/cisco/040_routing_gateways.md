@@ -55,6 +55,8 @@ ip route 0.0.0.0 0.0.0.0 gi0/0/1 5
   - highest ip address of all interfaces
 - **DR**: designated router, elected for each segment (Layer 2 broadcast domain) to reduce OSPF packets
 - **BDR**: backup designated router
+- **cost**: the cost on an interface is used by the SPF algorithm to pick the best path
+- **reference-bandwidth**: default cost = interface-bandwidth / reference-bandwidth (rounded up to an integer)
 
 #### Packet types
 
@@ -81,9 +83,20 @@ router ospf 10 ! =process-id
   ! Either add a network to OSPF here
   network 192.168.42.0 0.0.0.255 area 0
 
+  ! If configured, should be on all devices in the network
+  auto-cost reference-bandwidth 1000
+
+  ! Propagates default static routes to OSPF
+  default-information originate
+
 interface gi0/0/0
   ! Or add the network from the interface directly
   ip ospf 10 area 0
+
+  ! Optional settings
+  ip ospf cost 10
+  ip ospf hello-interval 5
+  ip ospf dead-interval 20
 
   no shutdown
   ip address 192.168.42.254 255.255.255.0
