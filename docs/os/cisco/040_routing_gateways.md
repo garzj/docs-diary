@@ -42,7 +42,52 @@ ip route 0.0.0.0 0.0.0.0 gi0/0/1 5
 
 ### OSPF
 
-TODO
+### Terminology
+
+- **SPF**: shortest path first (using Dijkstra's algorithm)
+- **adjacency database**: list of neighbor routers
+- **link-state database (LSDB)**: database describing the whole topology (the same for routers in the same area)
+- **forwarding database (aka routing table)**: generated list of next-hop routes (from the link-state db with the SPF algorithm)
+- **loopback interfaces**: can be configured with an IP address for higher availability, explained in the [administration chapter](./administration#loopback-interfaces)
+- **router id**: id for picking DR and BDR, can be the following (ordered by priority)
+  - configured router id (highest priority)
+  - loopback ip address
+  - highest ip address of all interfaces
+- **DR**: designated router, elected for each segment (Layer 2 broadcast domain) to reduce OSPF packets
+- **BDR**: backup designated router
+
+#### Packet types
+
+- **hello**: to create the adjacency db
+- **database desc (DBD)**: describes a link-state db, so other routers know what they are missing
+- **link state**
+  - **request (LSR)**: request a specific missing link state advertisement (LSA)
+  - **update (LSU)**: contains the LSAs with data
+  - **ack (LSAck)**: acknowledge the receipt
+
+#### Configuration
+
+```cisco-ios
+interface loopback 1
+  ip address 2.2.2.2 255.255.255.255
+  no shutdown
+
+router ospf 10 ! =process-id
+  router-id 1.1.1.1
+
+  ! Disable OSPF packet propagation on an interface (i.e. to an ISP)
+  passive-interface gi1/0/1
+
+  ! Either add a network to OSPF here
+  network 192.168.42.0 0.0.0.255 area 0
+
+interface gi0/0/0
+  ! Or add the network from the interface directly
+  ip ospf 10 area 0
+
+  no shutdown
+  ip address 192.168.42.254 255.255.255.0
+```
 
 ### EIGRP
 
@@ -59,4 +104,10 @@ show ipv6 route static
 
 ! Tracing the route to a device
 traceroute 192.168.5.3
+
+! OSPF
+show ip protocols | include Router ID
+show ip ospf neighbor
+show ip ospf database
+show ip ospf interface gi0/0/0
 ```

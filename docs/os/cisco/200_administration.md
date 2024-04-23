@@ -4,13 +4,17 @@ Administrating Cisco devices remotely using SSH, telnet and CDP and monitoring t
 
 ## Remote administration
 
-### loopback interfaces
+### Loopback interfaces
 
-todo
+Using a loopback interface to reach a router is mainly useful for redundancy.
 
-### SSH, telnet
+If a physical link goes down, a normal interface dies along with it. The loopback will never go down until administratively or the device is turned off, so it's available as long as there's a route to it.
 
-todo
+```cisco-ios
+interface loopback 0
+  ip address 2.2.2.2 255.255.255.255
+  no shutdown
+```
 
 ### find neighbors with CDP, etc.
 
