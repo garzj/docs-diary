@@ -20,7 +20,7 @@ interface loopback 0
 
 ### SSH
 
-```
+```cisco-ios
 ! Required
 hostname nice-device
 ip domain-name example.com
