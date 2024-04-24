@@ -38,20 +38,33 @@ ip access-list standard SOME_NAME
 ip access-list extended MY_ACCESS_LIST
   permit ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255
   permit ip 192.168.20.0 0.0.0.255 192.168.10.0 0.0.0.255
+  ! Comment
+  remark allow ssh from admin network
   permit tcp 192.168.99.0 0.0.0.255 192.168.50.0 0.0.0.255 eq ssh
   deny any any
 ```
 
 ## Applying
 
+### Interfaces
+
 ```cisco-ios
 interface gi0/0/0
   ip access-group MY_ACCESS_LIST in
 ```
 
+### VTYs
+
+```cisco-ios
+line vty 0 4
+  ! On VTYs inbound rules match incoming traffic to the
+  ! VTY line, not the router (as opposed to interfaces)
+  access-class MY_ACCESS_LIST in
+```
+
 ## Understanding inbound / outbound
 
-An inbound access list only applies for packets that enter a router on the interface it was configured on.
+For interfaces, an inbound access list only applies for packets that enter a router on the interface it was configured on.
 
 Suppose we have the following network (with routing already configured):
 
@@ -82,8 +95,19 @@ interface gi0/0/1
 
 The ping fails, because the ACL now applies to the response packets from R3 exiting on gi0/0/1, but the allowed destination does not match R1.
 
-## Evaluation
+## Editing
 
 ```cisco-ios title="#"
+! Show ACLs with numbering
 show access-lists
+
+ip access-list extended MY_ACCESS_LIST
+  ! Delete a rule
+  no 10
+
+  ! Insert a rule
+  25 permit ip 192.168.30.0 0.0.0.255 any
+
+! Clear matches counter
+clear access-list counters MY_ACCESS_LIST
 ```
