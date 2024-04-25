@@ -54,7 +54,7 @@ crypto key generate rsa general-keys modulus 2048
 login block-for 120 attempts 3 within 60
 
 ! Get amount of vty lines (usually 5 or 16)
-show line
+do show line
 
 ! or line vty 0 15
 line vty 0 4
