@@ -66,6 +66,10 @@ switchport nonegotiate
 On a router trunking is done via subinterfaces.
 
 ```cisco-ios
+! The base interface has to be enabled
+interface gi0/0/0
+  no shutdown
+
 interface gi0/0/0.42
   description The subinterface for VLAN 42
   encapsulation dot1Q 42
