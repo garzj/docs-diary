@@ -60,7 +60,3 @@ int vlan1
   standby 1 preempt
   standby 1 ip 10.0.0.1
 ```
-
-## VRRP
-
-TODO
