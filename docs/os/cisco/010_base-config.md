@@ -55,6 +55,7 @@ login block-for 120 attempts 3 within 60
 
 ! Get amount of vty lines (usually 5 or 16)
 do show line
+do show run | i vty
 
 ! or line vty 0 15
 line vty 0 4
