@@ -44,7 +44,22 @@ show etherchannel port-channel
 
 ## HSRP
 
-TODO
+```cisco-ios title="sw-1-conf#"
+int vlan1
+  ip address 10.0.0.2 255.255.0.0
+  standby 1 preempt
+  standby 1 priority 105
+  standby 1 ip 10.0.0.1
+  ! lowers the priority by 10, so 95 (default is 100) if gi1/1/1 goes down
+  standby 1 track gi1/1/1
+```
+
+```cisco-ios title="sw-2-conf#"
+int vlan1
+  ip address 10.0.0.3 255.255.0.0
+  standby 1 preempt
+  standby 1 ip 10.0.0.1
+```
 
 ## VRRP
 
