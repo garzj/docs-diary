@@ -16,8 +16,6 @@ interface loopback 0
   no shutdown
 ```
 
-### Telnet
-
 ### SSH
 
 ```cisco-ios
@@ -43,6 +41,8 @@ line vty 0 4
 
   transport input ssh
 ```
+
+The vty lines should probably be secured with an access list too that permits only administrator networks as explained in [the ACL chapter](./acls).
 
 ### find neighbors with CDP, etc.
 

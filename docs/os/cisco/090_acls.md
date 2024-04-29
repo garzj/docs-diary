@@ -56,10 +56,14 @@ interface gi0/0/0
 ### VTYs
 
 ```cisco-ios
+ip access-list standard vty-in
+ permit 223.14.23.24 0.0.0.7
+ deny any
+
 line vty 0 4
   ! On VTYs inbound rules match incoming traffic to the
   ! VTY line, not the router (as opposed to interfaces)
-  access-class MY_ACCESS_LIST in
+  access-class vty-in in
 ```
 
 ## Understanding inbound / outbound
