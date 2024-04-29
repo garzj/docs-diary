@@ -140,6 +140,20 @@ interface gi0/0/0
   ip address 192.168.42.254 255.255.255.0
 ```
 
+## Redistributing routes
+
+The redistribute command is useful to share routes from one routing protocol to another.
+
+### Example: bridging OSPF and EIGRP
+
+```cisco-ios
+router eigrp 100
+  redistribute ospf 1
+
+router ospf 1
+  redistribute eigrp 100 subnets
+```
+
 ## Evaluation
 
 ```cisco-ios title="#"
@@ -158,5 +172,3 @@ show ip ospf neighbor
 show ip ospf database
 show ip ospf interface gi0/0/0
 ```
-
-! todo: redistribute
