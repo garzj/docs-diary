@@ -45,7 +45,8 @@ ip route 0.0.0.0 0.0.0.0 gi0/0/1 5
 
 ### Terminology
 
-- **SPF**: shortest path first (using Dijkstra's algorithm)
+- **OSPF area**: a routing domain under which routes are propagated
+- **SPF algorithm**: shortest path first algorithm (using Dijkstra's)
 - **adjacency database**: list of neighbor routers
 - **link-state database (LSDB)**: database describing the whole topology (the same for routers in the same area)
 - **forwarding database (aka routing table)**: generated list of next-hop routes (from the link-state db with the SPF algorithm)
@@ -75,6 +76,7 @@ interface loopback 1
   ip address 2.2.2.2 255.255.255.255
   no shutdown
 
+! In OSPF, the process-id is local to the device for identification
 ! router ospf <process-id>
 router ospf 10
   router-id 1.1.1.1
@@ -82,17 +84,17 @@ router ospf 10
   ! Disable OSPF packet propagation on an interface (i.e. to an ISP)
   passive-interface gi1/0/1
 
-  ! Either add a network to OSPF here
-  network 192.168.42.0 0.0.0.255 area 0
-
   ! If configured, should be on all devices in the network
   auto-cost reference-bandwidth 1000
 
   ! Propagates default static routes to OSPF
   default-information originate
 
+  ! * Either add a network to OSPF here
+  network 192.168.42.0 0.0.0.255 area 0
+
 interface gi0/0/0
-  ! Or add the network from the interface directly
+  ! * Or add the network from the interface directly
   ip ospf 10 area 0
 
   ! Optional settings
@@ -106,7 +108,37 @@ interface gi0/0/0
 
 ### EIGRP
 
-TODO
+#### Terminology
+
+- **Autonomous system (AS)**: a routing domain under which routes are propagated (like the OSPF area)
+- **metric weights**: numbers that change how the shortest route is calculated
+- **router id**: the router id is picked the same way as in OSPF
+
+#### Configuration
+
+```cisco-ios
+interface loopback 1
+  ip address 2.2.2.2 255.255.255.255
+  no shutdown
+
+! Whe autonomous-system-no identifies the AS domain
+! router eigrp <autonomous-system-no>
+router eigrp 100
+  eigrp router-id 1.1.1.1
+
+  ! Disable OSPF packet propagation on an interface (i.e. to an ISP)
+  passive-interface gi1/0/1
+
+  ! Weights have to be the same on all devices in the AS domain
+  ! metric weights <type> <bandwidth> <load> <delay> <reliability> <MTU>
+  metric weights 0 2 0 1 0 0
+
+  network 192.168.42.0 0.0.0.255
+
+interface gi0/0/0
+  no shutdown
+  ip address 192.168.42.254 255.255.255.0
+```
 
 ## Evaluation
 
@@ -126,3 +158,5 @@ show ip ospf neighbor
 show ip ospf database
 show ip ospf interface gi0/0/0
 ```
+
+! todo: redistribute
