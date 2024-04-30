@@ -46,6 +46,8 @@ ip access-list extended MY_ACCESS_LIST
 
 ## Applying
 
+The best practice is to apply an access list as close to its destinations as possible.
+
 ### Interfaces
 
 ```cisco-ios
