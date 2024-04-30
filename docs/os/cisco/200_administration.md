@@ -52,7 +52,14 @@ todo
 
 ### SYSLOG
 
-todo
+```cisco-ios
+logging on
+! logging <syslog-server-ip>
+logging 10.1.0.5
+
+! Change the logging level
+logging trap ?
+```
 
 ### SNMP
 
