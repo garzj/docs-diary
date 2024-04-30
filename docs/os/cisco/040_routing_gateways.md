@@ -81,8 +81,8 @@ interface loopback 1
 router ospf 10
   router-id 1.1.1.1
 
-  ! Disable OSPF packet propagation on an interface (i.e. to an ISP)
-  passive-interface gi1/0/1
+  ! Disable OSPF packet propagation on an interface (i.e. on loopbacks)
+  passive-interface lo0
 
   ! If configured, should be on all devices in the network
   auto-cost reference-bandwidth 1000
