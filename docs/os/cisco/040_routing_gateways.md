@@ -72,7 +72,7 @@ ip route 0.0.0.0 0.0.0.0 gi0/0/1 5
 #### Configuration
 
 ```cisco-ios
-interface loopback 1
+interface loopback 0
   ip address 2.2.2.2 255.255.255.255
   no shutdown
 
@@ -117,7 +117,7 @@ interface gi0/0/0
 #### Configuration
 
 ```cisco-ios
-interface loopback 1
+interface loopback 0
   ip address 2.2.2.2 255.255.255.255
   no shutdown
 
