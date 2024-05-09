@@ -44,9 +44,13 @@ line vty 0 4
 
 The vty lines should probably be secured with an access list too that permits only administrator networks as explained in [the ACL chapter](./acls).
 
-### find neighbors with CDP, etc.
+### CDP
 
-todo
+CDP is a protocol that collects directly connected neighbor device information. It's useful when examining the logical topology surrounding a device.
+
+```cisco-ios
+show cdp neighbors
+```
 
 ## Logging and monitoring
 
