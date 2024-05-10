@@ -2,7 +2,7 @@
 
 Configuring an IPSec VPN between Cisco routers.
 
-## IPSec
+## Methodology
 
 IPSec can act as the hop between two networks, while bridging the traffic to another peer using various encryptions.
 
