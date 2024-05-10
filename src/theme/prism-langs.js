@@ -138,7 +138,7 @@ const ciscoLineKeywords = [
 ];
 
 Prism.languages['cisco-ios'] = {
-  comment: /!.*/,
+  comment: /^\s*!.*$/m,
   string: {
     greedy: true,
     pattern: /"(?:\\(?:\r\n|[\s\S])|[^"\\\r\n])*"/,
@@ -150,7 +150,7 @@ Prism.languages['cisco-ios'] = {
         .concat(ciscoIntKeywords)
         .concat(ciscoLineKeywords)
         .join('(?=$|\\s)|') + '(?=$|\\s)',
-      'm'
+      'm',
     ),
   },
   function: {
