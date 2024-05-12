@@ -64,7 +64,3 @@ logging 10.1.0.5
 ! Change the logging level
 logging trap ?
 ```
-
-### SNMP
-
-todo
