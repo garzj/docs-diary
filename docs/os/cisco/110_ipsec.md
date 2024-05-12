@@ -22,6 +22,7 @@ crypto isakmp policy 10
 
 ! Pre-shared key (has to match on both sides) with peer addr
 crypto isakmp key 1mysecurepassword! address 223.130.23.6
+! ...additional peer keys
 
 ! Specifies algorithms used for IPSec
 crypto ipsec transform-set my-vpn-set esp-aes 256 esp-sha-hmac
@@ -29,12 +30,16 @@ crypto ipsec transform-set my-vpn-set esp-aes 256 esp-sha-hmac
 ! VPN allowed traffic
 ip access-list extended my-vpn-acl
   permit ip 10.0.0.0 255.255.0.0 10.1.0.0 255.255.255.0
+! ...additional peer ACLs
 
 ! Put it together
 crypto map my-vpn-map 10 ipsec-isakmp
   set peer 223.130.23.6
   set transform-set my-vpn-set
   match address my-vpn-acl
+! ...additional peer maps
+! crypto map my-vpn-map 20 ipsec-isakmp
+  ! ...
 
 ! Bind map to outside interface
 int gi0/0/0
