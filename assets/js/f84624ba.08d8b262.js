@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_garz_dev=self.webpackChunkdocs_garz_dev||[]).push([[214],{6634:e=>{e.exports=JSON.parse('{"title":"\ud83d\udee0 Tools","slug":"/category/-tools","permalink":"/category/-tools","navigation":{"previous":{"title":"Welcome","permalink":"/"},"next":{"title":"Digi4School","permalink":"/tools/digi4school"}}}')}}]);

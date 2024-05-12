@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_garz_dev=self.webpackChunkdocs_garz_dev||[]).push([[8424],{1465:e=>{e.exports=JSON.parse('{"title":"Windows","slug":"/category/windows","permalink":"/category/windows","navigation":{"previous":{"title":"Swapfiles","permalink":"/os/linux/swap"},"next":{"title":"Disable bing search","permalink":"/os/windows/disable-bing-search"}}}')}}]);

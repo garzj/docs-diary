@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_garz_dev=self.webpackChunkdocs_garz_dev||[]).push([[613],{1515:e=>{e.exports=JSON.parse('{"title":"\u2699 OS","slug":"/category/-os","permalink":"/category/-os","navigation":{"previous":{"title":"PlatformIO","permalink":"/tools/platform-io"},"next":{"title":"Cisco IOS","permalink":"/os/cisco/"}}}')}}]);
